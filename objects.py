@@ -29,7 +29,7 @@ class DBcon:
         return pd.read_sql_query(query, self.con)
 
     # execute query
-    def exec_query(self, query):
+    def _query(self, query):
         return pd.read_sql_query(query, self.con)    
 
 #class datafrm:
