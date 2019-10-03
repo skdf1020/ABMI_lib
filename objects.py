@@ -28,6 +28,9 @@ class DBcon:
         query = "select TABLE_NAME, COLUMN_NAME, DATA_TYPE from " + self.db_name + ".INFORMATION_SCHEMA.COLUMNS"
         return pd.read_sql_query(query, self.con)
 
+    # execute query
+    def exec_query(self, query):
+        return pd.read_sql_query(query, self.con)    
 
 #class datafrm:
 #    def __init__(self, query, con):
