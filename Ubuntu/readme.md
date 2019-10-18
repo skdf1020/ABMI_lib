@@ -27,6 +27,8 @@ sudo vi /etc/fstab 혹은 sudo gedit /etc/fstab
 sudo id pi 혹은 sudo gedit /etc/passwd
 ```
 ## 마운트 명령어
+
 ```
 sudo mount /(원하는 경로)/shared
 ```
+재부팅 시 위 코드를 실행하여 암호를 다시 입력해야한다.
