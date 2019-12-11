@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event_Logger</title>
+    <style>
+        *{margin:0; padding:0;}
+
+        body{ font:20px "NanumGothic"; }
+        form { padding:25px; }
+
+        #wrap { width:800px; height:500px; margin:0 auto; }
+        #header { height:70px; background-color:#FBCFD0; }
+        #container { height:360px; background-color:#ccc; -webkit-box-orient:horizontal;}
+        #aside { width:300px; height:360px; background-color:#D3D5F5; float:left; }
+        #contents { width:500px; height:360px; background-color:#FFFA99; float:left;}
+        #footer { height:70px; background:#C8EFD4; clear:both; }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h2> Event Logger(example1) </h2>
+            <hr>
+        </div>
+        <div id="container">
+            <div id="aside">
+                <div id="bedType">
+                    <form>
+                        <label> Select the room type </label> <br>
+                        <input type="radio" value="MICU" name="room"> MICU <br>
+                        <input type="radio" value="SU" name="room"> SU <br>
+                        <input type="radio" value="NCUB" name="room"> NCUB <br>
+                    </form>
+                </div>
+                <div id="bedNum">
+                    <form>
+                        <label> Type the bed number </label> <br>
+                        <input type="text" name="number" placeholder="Type here">
+                    </form>
+                </div>
+            </div>
+            <div id="contents">
+                <form>
+                    <label> Log Event & Timestamp </label> <br>
+                    <input type="text" name="log" placeholder="Type here">
+                </form>
+            </div>
+        </div>
+        <div id="footer">
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+</body>
+</html>

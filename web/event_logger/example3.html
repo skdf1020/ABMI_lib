@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event_Logger</title>
+    <style>
+        *{margin:0; padding:0;}
+
+        body{ font:20px "NanumGothic"; }
+        form { padding:25px; }
+
+        #wrap { width:800px; height:500px; margin:0 auto; }
+        #header { height:70px; background-color:#FBCFD0; }
+        #container { height:360px; background-color:#ccc; -webkit-box-orient:horizontal;}
+        #aside { width:300px; height:360px; background-color:#D3D5F5; float:left; }
+        #contents { width:500px; height:360px; background-color:#FFFA99; float:left;}
+        #footer { height:70px; background:#C8EFD4; clear:both; }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h2> Event Logger(example3) </h2>
+            <hr>
+        </div>
+        <div id="container">
+            <div id="aside">
+                <form>
+                    <fieldset>
+                        <legend> Room Info </legend>
+                            Room Type: <br>
+                            <select name="room" size="3">
+                                <option value="MICU"> MICU </option>
+                                <option value="SU"> SU </option>
+                                <option value="NCUB"> NCUB </option>
+                            </select> <br><br>
+                            Bed Number: <br>
+                            <input type="text" name="number" placeholder="Type here"> <br>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="contents">
+                <form>
+                    <fieldset>
+                        <legend> Log Event & Timestamp </legend>
+                        <textarea name="comment" cols="60" rows="15" placeholder="Type here"></textarea>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div id="footer">
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+</body>
+</html>
