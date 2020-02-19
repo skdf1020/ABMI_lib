@@ -47,3 +47,7 @@ nvidia-docker라는게 존재함.
 continuumio/anaconda3 image 사용해볼것
 
 
+
+집에서
+dockefile에 대해 좀 봤음.
+apt, apt-get, ppa, curl등도 자료 읽어봄.
