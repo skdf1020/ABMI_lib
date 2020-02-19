@@ -1,0 +1,49 @@
+1. docker pull ubuntu
+2. docker run -it --name abmi ubuntu /bin/bash
+docker exec -it abmi /bin/bash 로 언제든 진입 가능.
+exit 로 종료 가능.
+3. (abmi 안에서) apt update
+4. (abmi 안에서) apt install -y wget
+5. (abmi 안에서) wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
+6. (abmi 안에서) mkdir /home/download
+7. (abmi 안에서) mv Anaconda3-2019.07-Linux-x86_64.sh /home/download
+8. (abmi 안에서) bash Anaconda3-2019.07-Linux-x86_64.sh  #중간 경로 설정에선 /home/anaconda3로 설정
+
+<<한글입출력 기능은 도커 컨테이너 내에 어떻게 구현하나...>>
+
+결국 컨테이너 안에서 conda 명령어가 실행되지 않는 문제 발생.
+
+이미 만들어진 anaconda 혹은 딥러닝용 이미지를 다운받아 쓰기로...
+okwrtdsh/anaconda3이미지..
+
+	
+nvidia-docker라는게 존재함.
+
+1. nvidia driver 설치.
+
+2. curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+
+3. curl -s -L https://nvidia.github.io/nvidia-docker/ubuntu16.04/amd64/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+	## apt repository에 nvidia-docker설치 정보 업데이트하는 과정
+
+4. sudo apt-get update
+
+5. sudo apt-get install -y nvidia-docker2
+
+6. sudo pkill -SIGHUP dockerd
+
+7. docker pull nvidia/cuda   #확인하는 과정을 하기 위함.
+
+8. docker run --runtime=nvidia --rm -ti nvidia/cuda nvidia-smi
+	혹은
+   nvidia-docker run --rm -ti nvidia/cuda nvidia-smi
+   	nvidia driver화면이 나온다면 성공적으로 설치된것.
+
+9. nvidia-docker run -v $(pwd):/src/notebooks -p 8888:8888 -td okwrtdsh/anaconda3:keras-10.0-cudnn7
+	gpu용 okwrtdsh/anaconda3설치 
+
+... 또 unauthorizes 에러 발생... 더 작은 이미지로 해봐야함.
+
+continuumio/anaconda3 image 사용해볼것
+
+
