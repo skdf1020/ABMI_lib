@@ -1,7 +1,7 @@
 # Docker
 
-참조1 : [link](https://www.bsidesoft.com/?p=7820)
-참조2 : [link](http://pyrasis.com/book/DockerForTheReallyImpatient/)
+참조1 : [bsidesoft](https://www.bsidesoft.com/?p=7820)
+참조2 : [pyrasis](http://pyrasis.com/book/DockerForTheReallyImpatient/)
 
 ## 1. 저장소 설정
 
