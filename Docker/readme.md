@@ -90,3 +90,27 @@
 >```
 >docker exec -i -t mynginx /bin/bash
 >```
+## 5. 이미지 만들기
+>Dockerfile 이라는 이름으로 텍스트 작성. 내용은 다음과 같다.
+>```
+>FROM ubuntu:18.04
+>RUN apt update
+>RUN apt install -y python3-pip
+>RUN pip3 install jupyter
+>RUN pip3 install matplotlib
+>RUN jupyter notebook --generate-config --allow-root
+>RUN echo "c.NotebookApp.password = u'sha1:6a3f528eec40:6e896b6e4828f525a6e20e5411cd1c8075d68619'" >> /root/.jupyter/jupyter_notebook_config.py
+>EXPOSE 8888
+>ENTRYPOINT jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --no-browser
+>```
+>해당 파일이 저장된 경로로 이동한 후 다음을 실행.
+>```
+>docker build --tag abmi:ubuntu_18.04
+>```
+>이미지가 만들어지면 다음을 실행.
+>```
+>docker run -it --rm -p 8888:8888 -v /home/yoonlab6/docker:/home/root/test abmi:ubuntu_18.04
+>```
+>호스트 컴퓨터에서 브라우저를 열고 localhost:8888/에 접속하면 비밀번호를 입력하게 한다.
+>'root'를 입력하면 jupyter notebook을 실행
+>home/root/test에 들어가서 파일을 만들면 host의 home/yoonlab6/docker안에도 똑같은 파일이 생성된다.
