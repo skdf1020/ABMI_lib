@@ -1,6 +1,6 @@
 # Docker
 
-참조1 : [link](https://www.bsideoft.com/?p=7820)
+참조1 : [link](https://www.bsidesoft.com/?p=7820)
 참조2 : [link](http://pyrasis.com/book/DockerForTheReallyImpatient/)
 
 ## 1. 저장소 설정
