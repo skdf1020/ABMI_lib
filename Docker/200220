@@ -1,0 +1,26 @@
+-----------dockerfile 작성------------------
+
+FROM ubuntu:18.04
+MAINTAINER abmi
+
+RUN apt update
+RUN apt install -y wget
+RUN mkdir /home/download
+RUN cd /home/download
+RUN wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
+
+--------예상되는 문제점. anaconda 설치 과정중에 있는 경로 설정 및 enter 입력 요구 부분에서 막힐것임-------
+
+그냥 python3을 설치하면??
+
+일단 ubuntu base로 컨테이너 시작
+1. docker run -it --name test ubuntu /bin/bash
+2. # apt update
+3. # apt install python3.7 (할 필요가 없다... 밑에처럼 pip를 깔면 알아서 3.6.9버전이 설치된다... 이 버전을 원하는걸 찾아서 설치하는 방법을 알아봐야 할듯)
+4. # apt install python3-pip  (pip 설치 이후 부터는 명령에 python3.7이 아닌 python3만 해도 실행이 된다.)
+5. # pip3 install pandas (pandas 버전 지정 설치도 알아볼 것.)
+
+------------
+	ubuntu : 18.04.4 LTS
+	python : 3.6.9
+	pandas등 : 라이브러리 버전을 한눈에 볼 수 있는 방법?
