@@ -1,4 +1,5 @@
-abmi 연구용 image 생성
+abmi 연구용 image 생성   
+(tensorflow-gpu 추후에 추가해야함.)   
 
 
 Ubuntu        18.04   
