@@ -1,0 +1,31 @@
+NVIDIA Container toolkit
+https://github.com/NVIDIA/nvidia-docker
+
+docker pull tensorflow/tensorflow:latest-gpu-jupyter
+https://www.tensorflow.org/install/docker?hl=ko#gpu_support
+
+docker run -it --name test -v ():/tf --gpus all -p 8888:8888 tensorflow/tensorflow:latest-gpu-jupyter bash
+
+apt-get update
+apt-get install python3-pip -y
+pip3 install --upgrade pip
+python3 -m pip install ipykernel
+python3 -m ipykernel install --user
+
+pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-2.1.0-cp35-cp35m-linux_x86_64.whl
+pip3 install numpy
+pip3 install pandas
+pip3 install matplotlib
+pip3 install requests
+pip3 install datetime
+https://www.tensorflow.org/install/pip?hl=ko
+
+jupyter notebook 실행하고 localhost:8888로 브라우저에 접속
+터미널에 표시된 토큰을 복사하여 브라우저에 입력하면 접속됨.
+
+print(4/3)해서 나온 결과로 python3확인
+!nvidia-smi해서 CUDA버전을 확인하여 gpu사용 여부 확인
+
+구축한 이미지 저장
+
+
