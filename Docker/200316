@@ -25,6 +25,8 @@ jupyter notebook 실행하고 localhost:8888로 브라우저에 접속
 
 print(4/3)해서 나온 결과로 python3확인
 !nvidia-smi해서 CUDA버전을 확인하여 gpu사용 여부 확인
+GPU 사용 튜토리얼
+  https://www.tensorflow.org/guide/gpu?hl=ko
 
 구축한 이미지 저장
 
