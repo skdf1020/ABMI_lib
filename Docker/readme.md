@@ -41,6 +41,10 @@
 >```
 >sudo apt-get install docker-ce docker-ce-cli containerd.io
 >```
+>현재 사용자를 도커 이용자로 추가
+>```
+>sudo usermod -aG docker $USER
+>```
 >만약 특정 버전의 도커가 필요하다면 버전리스트 확인
 >```
 >apt-cache madison docker-ce
