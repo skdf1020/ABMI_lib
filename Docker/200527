@@ -1,0 +1,10 @@
+pytorch docker 설치
+
+1. docker pull pytorch/pytorch
+2. docker run -it --gpus all --name torch -v /home/tj/Torch:/workspace -p 8888:8888 -p 6006:6006 pytorch/pytorch:latest bash
+3. (in cont) conda install jupyter
+4. (in cont) jupyter notebook --ip=0.0.0.0 --allow-root --no-browser
+	localhost:8888
+	input token
+5. import torch
+6. !nvidia-smi
