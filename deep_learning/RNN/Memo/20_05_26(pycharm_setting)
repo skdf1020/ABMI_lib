@@ -1,0 +1,17 @@
+/usr/local/bin/charm
+
+
+도커로만 작업하다가 로컬로 작업하려니 python3가 설치되어 있지 않았음.
+그래서 아래와 같은 오류 발생.
+pycharm - ModuleNotFoundError(distutil.util)
+
+#sudo apt install python3-pip
+
+sudo apt update
+sudo apt upgrade
+sudo apt install pypy-setuptools  (pip를 사용할 수 있게 환경을 세팅해주는 모듈인듯.)
+(해결)
+
+
+rnn 학습 시작.
+RNN project(pycharm)

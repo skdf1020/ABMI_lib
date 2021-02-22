@@ -1,0 +1,41 @@
+pycharm은 공식적인 docker image가 없음.
+pycharm내부에서 docker와 연동하는 기능이 있지만 유료.
+
+
+
+nvidia-smi
+-> 결과에 쿠다 버젼이 10.2라고 나오지만, nvcc명령어는 작동하지 않는다.
+
+[링크] https://docs.nvidia.com/deploy/cuda-compatibility/index.html
+드라이버 버전이 440.82 위 링크에 따라 CUDA 10.2를 설치하기로함.
+
+
+[링크] https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal
+wget http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run
+sudo sh cuda_10.2.89_440.33.01_linux.run
+
+
+(다운로드가 너무 느리다. 엔비디아측에서 속도 제한하는 듯. 미리 다운 받아서 usb에 담아놓는다면?)
+
+export CUDA_HOME=/usr/local/cuda
+
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64
+
+PATH=${CUDA_HOME}/bin:${PATH}
+
+export PATH
+
+
+(pycharm venv terminal)
+pip install cupy
+
+
+
+
+
+
+RNN code
+
+cupy.add.at = cupyx.scatter_add
+add.at자체가 cupy엔 없음.
+해당 모듈 내에 새로 정의해야함.
